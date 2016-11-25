@@ -1,5 +1,7 @@
 package net.leeautumn.cache;
 
+import net.leeautumn.config.Configs;
+
 import java.util.ArrayList;
 
 /**
@@ -16,26 +18,26 @@ public class LRU8 {
 //    //低命中缓存,不允许进行自动修正(lineMaxLength)
 //    static LRUCache<Object> cacheLevel2 = new LRUCache<Object>(100,LRUCache.DEFAULT_MAX_CAPACITY,false,LRUCache.DEFAULT_EACHLIST_MAXSIZE);
 
-    private static final int DEFAULT_INIT_LENGTH = 8;
+    private static final int DEFAULT_INIT_LENGTH = Integer.valueOf(Configs.get("leecache.cache.LRUKCacheTableSize"));
 
-    private static ArrayList<LRUCache<Object>> cachelists = new ArrayList<LRUCache<Object>>();
+    private static ArrayList<LRUCache<byte[]>> cachelists = new ArrayList<LRUCache<byte[]>>();
     private static final Object[]               locks     = new Object[DEFAULT_INIT_LENGTH];
     static {
         for (int i=0;i<DEFAULT_INIT_LENGTH;i++){
-            cachelists.add(new LRUCache<Object>(25,64,200));
+            cachelists.add(new LRUCache<byte[]>(25,64, Integer.valueOf(Configs.get("leecache.cache.eachListMaxLength"))));
             locks[i] = new Object();
         }
     }
-    public static Object get(String key){
+    public static byte[] get(String key){
         int h = hashInTable(key);
-        Object o = null;
+        byte[] o = null;
         synchronized (locks[h]) {
             o = cachelists.get(h).get(key);
         }
         return o;
     }
 
-    public static void put(String key,Object value){
+    public static void put(String key,byte[] value){
         int h = hashInTable(key);
         synchronized (locks[h]) {
             cachelists.get(h).put(key,value);
