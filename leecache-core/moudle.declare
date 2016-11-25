@@ -1,4 +1,0 @@
-这个模块主要是对leecache的缓存部分的实现.
-
-LRUCache:最基本的LRU缓存组件.
-LRU8:    内部8个LRUCache所组成的Array,先做第一步hash >>> 10 ,然后进到LRUCache中,进一步hash >>> 16.

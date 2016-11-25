@@ -13,6 +13,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/leecache-config/pom.xml" />
+        <option value="$PROJECT_DIR$/leecache-core/pom.xml" />
         <option value="$PROJECT_DIR$/leecache-util/pom.xml" />
       </set>
     </option>
