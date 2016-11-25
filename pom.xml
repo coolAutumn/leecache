@@ -6,9 +6,10 @@
   <artifactId>leecache</artifactId>
   <version>1.0-SNAPSHOT</version>
   <modules>
-    <module>leecache-core</module>
     <module>leecache-common</module>
     <module>leecache-remoting</module>
+    <module>leecache-cachesrv</module>
+    <module>leecache-client</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -23,40 +24,96 @@
     </developer>
   </developers>
 
+
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--maven properties -->
+    <maven.test.skip>false</maven.test.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <!-- compiler settings properties -->
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
 
-    <!--日志Log依赖-->
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.21</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.21</version>
-    </dependency>
+    <plugins>
 
-    <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.21</version>
-    </dependency>
+      <!--用于多项目打包-->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <finalName>leecache</finalName>
+          <descriptors>
+            <descriptor>release.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+    </plugins>
 
 
 
-  </dependencies>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>
+      <!--日志Log依赖-->
+      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.21</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.7.21</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.21</version>
+      </dependency>
+
+
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>leecache-cachesrv</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>leecache-remoting</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>leecache-common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>leecache-client</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
 </project>

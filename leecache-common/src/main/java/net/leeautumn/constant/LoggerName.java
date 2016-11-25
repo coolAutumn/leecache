@@ -7,4 +7,9 @@ package net.leeautumn.constant;
 public class LoggerName {
     public static final String EncryptLoggerName = "Encrypter";
     public static final String EncryptFactoryLoggerName = "EncrypterFactory";
+
+    public static final String GetCacheServerLoggerName = "GetCacheServer";
+    public static final String PutCacheServerLoggerName = "PutCacheServer";
+
+    public static final String ConfigsLoggerName = "Configures";
 }

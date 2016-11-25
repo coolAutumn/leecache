@@ -30,7 +30,7 @@ public class EncryptFactory {
                 result = md5.encrypt(source);
                 break;
             default:
-                logger.warn("Temporary not supported encrypt way :{0}",encryptType.toString());
+                logger.warn("Temporary not supported encrypt way :{}",encryptType.toString());
         }
         return result;
     }
@@ -46,7 +46,7 @@ public class EncryptFactory {
                 result = md5.decode(source);
                 break;
             default:
-                logger.warn("Temporary not supported decode way :{0}",encryptType.toString());
+                logger.warn("Temporary not supported decode way :{}",encryptType.toString());
         }
 
         return result;

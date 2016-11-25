@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>leecache-common</artifactId>
+    <artifactId>leecache-client</artifactId>
     <packaging>jar</packaging>
 
-    <name>leecache-common</name>
+    <name>leecache-client</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -24,18 +24,11 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        <!--日志Log依赖-->
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.21</version>
+            <groupId>net.leeautumn</groupId>
+            <artifactId>leecache-remoting</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

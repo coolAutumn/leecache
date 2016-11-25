@@ -1,2 +1,2 @@
 # leecache
-This is a `distributed memory cache` written by `JAVA`.
+This is a `distributed memory net.leeautumn.cache` written by `JAVA`.

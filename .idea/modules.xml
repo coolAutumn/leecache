@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/leecache.iml" filepath="$PROJECT_DIR$/leecache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leecache-cachesrv/leecache-cachesrv.iml" filepath="$PROJECT_DIR$/leecache-cachesrv/leecache-cachesrv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leecache-client/leecache-client.iml" filepath="$PROJECT_DIR$/leecache-client/leecache-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/leecache-common/leecache-common.iml" filepath="$PROJECT_DIR$/leecache-common/leecache-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leecache-core/leecache-core.iml" filepath="$PROJECT_DIR$/leecache-core/leecache-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/leecache-remoting/leecache-remoting.iml" filepath="$PROJECT_DIR$/leecache-remoting/leecache-remoting.iml" />
     </modules>
   </component>

@@ -22,18 +22,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="leecache-cachesrv" />
+        <module name="leecache-client" />
         <module name="leecache-common" />
-        <module name="leecache-config" />
-        <module name="leecache-core" />
         <module name="leecache-remoting" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="leecache" target="1.5" />
-      <module name="leecache-common" target="1.5" />
+      <module name="leecache" target="1.6" />
+      <module name="leecache-cachesrv" target="1.6" />
+      <module name="leecache-client" target="1.6" />
+      <module name="leecache-common" target="1.6" />
       <module name="leecache-config" target="1.5" />
       <module name="leecache-core" target="1.5" />
-      <module name="leecache-remoting" target="1.5" />
+      <module name="leecache-remoting" target="1.6" />
       <module name="leecache-util" target="1.5" />
     </bytecodeTargetLevel>
   </component>
